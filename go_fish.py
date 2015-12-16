@@ -27,18 +27,20 @@ passing_out_cards()
 def player_1_turn():
     print player_1_hand
     print computer_hand
-    ask = ask_for_card()
-    if ask in computer_hand:
-        player_1_hand.extend(ask)
-        computer_hand.remove(ask)
-        print player_1_hand
-    else:
-        print "Go Fish!"
-        random_card = random.choice(deck_of_cards)
-        player_1_hand.append(random_card)
-        deck_of_cards.remove(random_card)
-        print player_1_hand
-
+    while True:    
+        ask = ask_for_card()    
+        if ask in computer_hand:
+            player_1_hand.extend(ask)
+            computer_hand.remove(ask)
+            print player_1_hand
+        else:
+            print "Go Fish!"
+            random_card = random.choice(deck_of_cards)
+            player_1_hand.append(random_card)
+            deck_of_cards.remove(random_card)
+            break
+    print player_1_hand
+        
 player_1_turn()
 
 
