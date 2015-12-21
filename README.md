@@ -1,5 +1,9 @@
 "Go Fish!" Final Project
 
+Usage:
+1. Run file in Python using go_fish.py
+2. Python Version 2.7.10
+
 User Flow:
 
 1. Shuffle cards (deck of 52)
