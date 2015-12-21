@@ -71,6 +71,7 @@ def player_1_turn():
     time.sleep(1)
     if len(deck_of_cards) > 0:
         random_card = random.choice(deck_of_cards)
+        print "Player 1 drew: " + random_card
         player_1_hand.append(random_card)
         remove_card(random_card)
         check_for_book(player_1_hand, player_1_score) 
