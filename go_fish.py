@@ -131,7 +131,7 @@ def computer_turn():
 
 def play_game():
     print "Welcome to Go Fish!"
-    print "How to play: Ask the Computer for a card. If you get 4 of the same cards, that is a book. The player with the most number of books wins!"
+    print "How to play: Ask the Computer for a card. If you have 4 of the same card, that is a book. The player with the most number of books wins!"
     passing_out_cards()
     while deck_of_cards > 0 and len(player_1_hand) > 0 and len(computer_hand) > 0:
         player_1_turn()
