@@ -23,7 +23,7 @@ def remove_card(random_card):
 def ask_for_card():
     return raw_input ("What card would you like to ask for? ")
 
-def asked_for_everything(stored_card):
+def asked_for_everything(stored_card):  #making sure the computer does not ask for the same card twice
     for i in computer_hand:
         if i not in stored_card:
             return False
@@ -69,7 +69,7 @@ def player_1_turn():
     time.sleep(1)
     print "Go Fish Player 1!"
     time.sleep(1)
-    if len(deck_of_cards) > 0 and len(player_1_hand) > 0:
+    if len(deck_of_cards) > 0 or len(player_1_hand) > 0:
         random_card = random.choice(deck_of_cards)
         print "Player 1 drew: " + random_card
         player_1_hand.append(random_card)
@@ -106,12 +106,10 @@ def computer_turn():
             player_1_hand.remove(computer_card)
         check_for_book(computer_hand, computer_score)
         time.sleep(1)
-        if len(computer_hand) < 0:
-            break
     time.sleep(1)
     print "Go Fish Computer!"
     time.sleep(1)
-    if len(deck_of_cards) > 0 and len(computer_hand) > 0:
+    if len(deck_of_cards) > 0 or len(computer_hand) > 0: 
         random_card = random.choice(deck_of_cards)
         computer_hand.append(random_card)
         remove_card(random_card)
@@ -133,9 +131,11 @@ def play_game():
     print "Welcome to Go Fish!"
     print "How to play: Ask the Computer for a card. If you have 4 of the same card, that is a book. The player with the most number of books wins!"
     passing_out_cards()
-    while deck_of_cards > 0: #and len(player_1_hand) > 0 and len(computer_hand) > 0:
+    while deck_of_cards > 0 and len(player_1_hand) > 0 and len(computer_hand) > 0:
         player_1_turn()
         computer_turn()
+    print "Player 1 Score: " + str(len(player_1_score))
+    print "Computer Score: " + str(len(computer_score))
    
 play_game()
 
