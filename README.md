@@ -1,8 +1,7 @@
 "Go Fish!" Final Project
 
 Usage:
-1. Run file in Python using go_fish.py
-2. Python Version 2.7.10
+1. Run file in Python (version 2.7.10) using go_fish.py
 
 User Flow:
 
